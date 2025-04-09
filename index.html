@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med.EQ Track</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
+</head>
+<body>
+  <div id="loginScreen">
+    <h1>MED.EQ TRACK</h1>
+    <h2>Welcome</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <div id="dashboard" style="display: none;">
+    <header>
+      <span>MEDICAL EQUIPMENT TRACKING</span>
+      <div class="header-buttons">
+        <!-- Theme toggle removed -->
+        <button id="logoutBtn" title="Logout">&#x23FB;</button>
+      </div>
+    </header>
+
+    <div id="statsBar">
+      <div class="stat-card" id="totalDevices">Total Devices: 0</div>
+      <div class="stat-card" id="ppmToday">PPM Today: 0</div>
+      <div class="stat-card" id="highRisk">High Risk: 0</div>
+    </div>
+
+    <div class="search-filter-wrapper">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by device, serial num or ward..." />
+      </div>
+
+      <select id="filterSelect">
+        <option value="">All Devices</option>
+        <option value="ppm-today">PPM Today</option>
+        <option value="ppm-soon">PPM Soon</option>
+        <option value="risk-low">Low Risk</option>
+        <option value="risk-high">High Risk</option>
+      </select>
+    </div>
+
+    <div class="deviceWrapper">
+      <div id="deviceContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
